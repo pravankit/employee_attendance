@@ -1,0 +1,43 @@
+:root{
+    --navbar-height:79px;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    opacity: .7;
+}
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#navbar ul{
+    display: flex;
+    font-family: 'Kanit', sans-serif;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3 rem;
+}
+#navbar ul li a{
+   display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: gold;
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: gold;
+    opacity: 9;
+}

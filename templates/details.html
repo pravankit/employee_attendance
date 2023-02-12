@@ -1,0 +1,70 @@
+{% include "header.html" %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/details.css' %}">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+<script>
+    var MyGlobal1 = {
+        label_names: {{ label_names| safe }},
+        days_graph: {{ days_graph | safe }},
+        backgroundcolor: {{ backgroundcolor | safe }},
+        };
+</script>
+<script type="text/javascript" src="{% static 'js/details.js' %}"></script>
+<section id="home">
+    <h1 id="h-primary" align="center">Details of Individual Employee</h1>
+    <h6>{{error}}</h6>
+</section>
+<br />
+<div class="table-responsive">
+    <br />
+    <div class="row">
+        <form class="input-group-lg" method="GET">
+            {% csrf_token %}
+            <div class="input-daterange">
+                <div class="col-md-4">
+                    <input type="text" name="start_date" placeholder="Enter start month" class="form-control" readonly />
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="end_date" placeholder="Enter end month" class="form-control" readonly />
+                </div>
+            </div>
+             <div class="btn-group">
+                <label for="name">Choose employee:</label>
+                    <select class="select" name="namelist">
+                    {% for name in emp_name %}
+                    <option value={{name.Name}}>{{name.Name}}</option>';
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="btn-group"><input type="submit" name="export" value="Export" />
+                 <button name="graph" onclick="myfunction()">Click for graph</button>
+            </div>
+        </form>
+    </div>
+    <br />
+    <div style="width:90%;height:20%;text-align:center" ; padding>
+        <h2 class="page-header">{{e_name}} Graph </h2>
+        <div>Working_Days Vs Months </div>
+        <canvas id="chartjs_bar"></canvas>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <h3>Working Days Details</h3>
+             <tr>
+                <th>Month</th>
+                <th> {{e_name}} working days</th>
+            </tr>
+        </thead>
+        <tbody> </tbody>
+    </table>
+    <br />
+    <br />
+</div>
+</body>
+</html>

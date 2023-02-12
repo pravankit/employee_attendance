@@ -1,0 +1,22 @@
+{% include "header.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+<script>
+    var MyGlobal = {
+        data_labels1: {{ data_labels1| safe }},
+    data_labels: {{ data_labels | safe }},
+    data_first_last_month: {{ data_first_last_month | safe }},
+    data_second_last_month: {{ data_second_last_month | safe }},
+    data_third_last_month: {{ data_third_last_month | safe }},};
+</script>
+<script type="text/javascript" src="{% static 'js/graph_script.js' %}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+<section id="home">
+    <h1 class="h-primary">Welcome to Employee Attendance</h1>
+    <a href="{% url 'individual_graph' %}" type="button" id="btn" >Click to see Individual Employee Details</a>
+</section>
+<section id="graph3">
+    <canvas id="canvas"></canvas>
+</section>
+</body>
+</html>
