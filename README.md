@@ -44,3 +44,11 @@ Once pip has finished downloading the dependencies:
 (env)$ python manage.py runserver
 And navigate to http://127.0.0.1:8000/
 ******************************************************************************************************************
+SCREEN SHOTS
+![sharma1](https://user-images.githubusercontent.com/118259708/224639971-985cf675-6e31-4273-ab94-46fb791d2af1.jpg)
+![sswebsite4](https://user-images.githubusercontent.com/118259708/224640084-e88138af-f79b-43eb-bbc5-994c52469d95.jpg)
+![sswebsite5](https://user-images.githubusercontent.com/118259708/224640096-647f3109-bdc3-4d75-90d5-f61376a88215.jpg)
+![sswebsite1](https://user-images.githubusercontent.com/118259708/224640099-38db8e41-6ca8-446a-9304-e16c51f9aa60.jpg)
+![sswebsite2](https://user-images.githubusercontent.com/118259708/224640107-0517fcff-e60c-4df5-8510-2d7f51220449.jpg)
+![sswebsite3](https://user-images.githubusercontent.com/118259708/224640108-c05221b6-9a84-4a8f-bf78-2619d032afb7.jpg)
+
